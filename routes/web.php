@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/springboard', function () {
+    return view('springboard');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('admin/login', 'Auth\AdminloginController@showLoginform')->name('admin.login');
+Route::post('admin/login', 'Auth\AdminloginController@login')->name('admin.login.submit');
+Route::get('admin/', 'AdminController@index')->name('admin.dashboard');
