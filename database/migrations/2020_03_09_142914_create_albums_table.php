@@ -24,6 +24,7 @@ class CreateAlbumsTable extends Migration
             $table->float('rating');
             $table->longText('album_des');
             $table->string('album_path');
+            $table->timestamps();
         });
     }
 

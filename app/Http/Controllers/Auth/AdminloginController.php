@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+
+
 class AdminloginController extends Controller
 {
     public function __construct(){
-        $this->middleware('guest:admin');
+        $this->middleware('guest:admin')->except('adminlogout',);
     }
 
     public function showLoginform(){
@@ -24,5 +26,9 @@ class AdminloginController extends Controller
             return redirect()->intended(route('admin.dashboard'));
         }
         return redirect()->back()->withInput($request->only('email','remember'));
+    }
+    public function adminlogout(){
+        Auth::guard('admin')->logout();
+        return redirect('admin/login');
     }
 }

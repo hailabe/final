@@ -52,7 +52,34 @@ return [
         ],
         'admin-api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'admins',
+            'hash' => false,
+        ],
+        'salesstaff' => [
+            'driver' => 'session',
+            'provider' => 'salesstaffs',
+        ],
+        'salesstaff-api' => [
+            'driver' => 'token',
+            'provider' => 'salesstaffs',
+            'hash' => false,
+        ],
+        'artist' => [
+            'driver' => 'session',
+            'provider' => 'artists',
+        ],
+        'artist-api' => [
+            'driver' => 'token',
+            'provider' => 'artists',
+            'hash' => false,
+        ],
+        'producer' => [
+            'driver' => 'session',
+            'provider' => 'producers',
+        ],
+        'producer-api' => [
+            'driver' => 'token',
+            'provider' => 'producers',
             'hash' => false,
         ],
 
@@ -83,6 +110,18 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+        'salesstaffs' => [
+            'driver' => 'eloquent',
+            'model' => App\salesstaff::class,
+        ],
+        'artists' => [
+            'driver' => 'eloquent',
+            'model' => App\artist::class,
+        ],
+        'producers' => [
+            'driver' => 'eloquent',
+            'model' => App\producer::class,
         ],
 
         // 'users' => [
@@ -115,6 +154,24 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+            'throttle' => 15,
+        ],
+        'salestaffs' => [
+            'provider' => 'salestaffs',
+            'table' => 'password_resets',
+            'expire' => 15,
+            'throttle' => 15,
+        ],
+        'artists' => [
+            'provider' => 'artists',
+            'table' => 'password_resets',
+            'expire' => 15,
+            'throttle' => 15,
+        ],
+        'producers' => [
+            'provider' => 'producers',
             'table' => 'password_resets',
             'expire' => 15,
             'throttle' => 15,

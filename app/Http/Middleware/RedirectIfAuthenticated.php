@@ -18,9 +18,35 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        switch ($guard) {
+            case 'admin':
+                if (Auth::guard($guard)->check()) {
+                   return redirect()->route('admin.dashboard');
+                }
+                break;
+            case 'salesstaff':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('salesstaff.dashboard');
+                }
+                break;
+            case 'artist':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('artist.dashboard');
+                }
+                break;
+            case 'producer':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('producer.dashboard');
+                }
+                break;
+            
+            default:
+                if (Auth::guard($guard)->check()) {
+                   return redirect()->route('/home');
+                }
+                break;
         }
+        
 
         return $next($request);
     }

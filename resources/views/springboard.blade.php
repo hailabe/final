@@ -84,11 +84,11 @@
                 top: 50%;
                 left: 50%;>
                 <div class="title m-b-md">
-                    Welcome to staff Dashboard
+                     Staff Dashboard
                 </div>
 
                 <div class="links">
-                    <a href="/admin/login"><img src="C:\wamp64\www\Laravel\Qignitweb project\Qignit-Web-Project\storage\app\images\admin.jpg" width="150" height="150" alt="Login as Admin" ></a>
+                    <a href="/admin/login"><img src="./images/user.jpg" width="150" height="150" alt="Login as Admin" ></a>
                     <a href="/admin/login">Login as SalesTeam</a>
                    
                 </div>
