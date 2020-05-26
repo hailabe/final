@@ -4,10 +4,10 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\salesstaff;
+use App\album;
 use Illuminate\Support\Facades\Hash;
 
-class SalesstaffController extends Controller
+class albumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class SalesstaffController extends Controller
      */
     public function index()
     {
-        return salesstaff::latest()->paginate(10);
+        return album::latest()->paginate(10);
     }
 
     /**
@@ -29,12 +29,12 @@ class SalesstaffController extends Controller
     {
         $this->validate($request,[
             'name' =>'required|string|max:255',
-            'email' =>'required|string|email|max:255|unique:salesstaffs',
+            'email' =>'required|string|email|max:255|unique:albums',
             'password' =>'required|string|min:8',
             'phoneNo' =>'required',
         ]);
         //return $request->all();
-        return salesstaff::create([
+        return album::create([
             'name'=>$request['name'],
             'email'=>$request['email'],
             'password'=>Hash::make($request['password']),
@@ -62,15 +62,15 @@ class SalesstaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $salesstaff=salesstaff::findOrFail($id);
+        $album=album::findOrFail($id);
         
         $this->validate($request,[
             'name' =>'required|string|max:255',
-            'email' =>'required|string|email|max:255|unique:salesstaffs,email,'.$salesstaff->id,
+            'email' =>'required|string|email|max:255|unique:albums,email,'.$album->id,
             'password' =>'sometimes|string|min:8',
             'phoneNo' =>'required',
         ]);
-        $salesstaff->update($request->all());
+        $album->update($request->all());
 
         return ['message'=>'updated sales info'];
     }
@@ -83,12 +83,12 @@ class SalesstaffController extends Controller
      */
     public function destroy($id)
     {
-        $salesstaff=salesstaff::findOrFail($id);
-        $salesstaff->delete();
+        $album=album::findOrFail($id);
+        $album->delete();
     }
     public function search(){
         if($search = \Request::get('q')){
-            $salesstaffs=salesstaff::where(function($query)use($search){
+            $albums=album::where(function($query)use($search){
                 $query->where('name','LIKE',"%$search%")
                       ->orWhere('email','LIKE',"%$search%")
                       ->orWhere('phoneNo','LIKE',"%$search%")
@@ -99,11 +99,8 @@ class SalesstaffController extends Controller
                      
             })->paginate(20);
         }else{
-            $salesstaffs=salesstaff::latest()->paginate(10);
+            $albums=album::latest()->paginate(10);
         }
-        return $salesstaffs;
-    }
-    public function list(){
-        return salesstaff::all();
+        return $albums;
     }
 }

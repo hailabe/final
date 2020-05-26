@@ -2344,6 +2344,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2353,10 +2402,15 @@ __webpack_require__.r(__webpack_exports__);
         created_at: '',
         updated_at: '',
         id: '',
-        name: '',
+        album_name: '',
         album_artist: '',
         producer: '',
-        phoneNo: ''
+        realese_date: '',
+        price: '',
+        rating: '',
+        album_des: '',
+        album_art: '',
+        album_path: ''
       })
     };
   },
@@ -60744,7 +60798,7 @@ var render = function() {
                       "div",
                       { staticClass: "form-group" },
                       [
-                        _c("label", [_vm._v("Name")]),
+                        _c("label", [_vm._v("Album Name")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -60756,11 +60810,13 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          class: { "is-invalid": _vm.form.errors.has("name") },
+                          class: {
+                            "is-invalid": _vm.form.errors.has("album_name")
+                          },
                           attrs: {
                             type: "text",
-                            name: "name",
-                            placeholder: "Name"
+                            name: "album_name",
+                            placeholder: "Album_Name"
                           },
                           domProps: { value: _vm.form.name },
                           on: {
@@ -60774,7 +60830,7 @@ var render = function() {
                         }),
                         _vm._v(" "),
                         _c("has-error", {
-                          attrs: { form: _vm.form, field: "name" }
+                          attrs: { form: _vm.form, field: "album_name" }
                         })
                       ],
                       1
@@ -60784,7 +60840,7 @@ var render = function() {
                       "div",
                       { staticClass: "form-group" },
                       [
-                        _c("label", [_vm._v("album_artist")]),
+                        _c("label", [_vm._v("Album_Artist")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -60830,7 +60886,7 @@ var render = function() {
                       "div",
                       { staticClass: "form-group" },
                       [
-                        _c("label", [_vm._v("producer")]),
+                        _c("label", [_vm._v("Producer")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -60876,43 +60932,192 @@ var render = function() {
                       "div",
                       { staticClass: "form-group" },
                       [
-                        _c("label", [_vm._v("Phone Number")]),
+                        _c("label", [_vm._v("Realese Date")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.phoneNo,
-                              expression: "form.phoneNo"
+                              value: _vm.form.realese_date,
+                              expression: "form.realese_date"
                             }
                           ],
                           staticClass: "form-control",
                           class: {
-                            "is-invalid": _vm.form.errors.has("phoneNo")
+                            "is-invalid": _vm.form.errors.has("realese_date")
                           },
                           attrs: {
-                            type: "text",
-                            name: "phoneNo",
-                            placeholder: "Phone No."
+                            type: "datetime",
+                            name: "realese_date",
+                            placeholder: "Realese Date."
                           },
-                          domProps: { value: _vm.form.phoneNo },
+                          domProps: { value: _vm.form.realese_date },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
-                              _vm.$set(_vm.form, "phoneNo", $event.target.value)
+                              _vm.$set(
+                                _vm.form,
+                                "realese_date",
+                                $event.target.value
+                              )
                             }
                           }
                         }),
                         _vm._v(" "),
                         _c("has-error", {
-                          attrs: { form: _vm.form, field: "phoneNo" }
+                          attrs: { form: _vm.form, field: "realese_date" }
                         })
                       ],
                       1
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", [_vm._v("Album Price")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.album_price,
+                              expression: "form.album_price"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("album_price")
+                          },
+                          attrs: {
+                            type: "text",
+                            name: "album_price",
+                            placeholder: "Album Price."
+                          },
+                          domProps: { value: _vm.form.album_price },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "album_price",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "album_price" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", [_vm._v("Album Rating")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.album_rating,
+                              expression: "form.album_rating"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("album_rating")
+                          },
+                          attrs: {
+                            type: "text",
+                            name: "album_rating",
+                            placeholder: "Album Rating."
+                          },
+                          domProps: { value: _vm.form.album_rating },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "album_rating",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "album_rating" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", [_vm._v("Album Description")]),
+                        _vm._v(" "),
+                        _c("textarea", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.album_description,
+                              expression: "form.album_description"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has(
+                              "album_description"
+                            )
+                          },
+                          attrs: {
+                            type: "text",
+                            name: "album_description",
+                            rows: "3",
+                            placeholder: "Album Description"
+                          },
+                          domProps: { value: _vm.form.album_description },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "album_description",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "album_description" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _vm._m(4)
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "modal-footer" }, [
@@ -61034,6 +61239,64 @@ var staticRenderFns = [
       },
       [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "exampleInputFile" } }, [
+        _vm._v("Album Art")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "input-group" }, [
+        _c("div", { staticClass: "custom-file" }, [
+          _c("input", {
+            staticClass: "custom-file-input",
+            attrs: { type: "file", id: "exampleInputFile" }
+          }),
+          _vm._v(" "),
+          _c("label", {
+            staticClass: "custom-file-label",
+            attrs: { for: "exampleInputFile" }
+          })
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "exampleInputFile" } }, [
+        _vm._v("File input")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "input-group" }, [
+        _c("div", { staticClass: "custom-file" }, [
+          _c("input", {
+            staticClass: "custom-file-input",
+            attrs: { type: "file", id: "exampleInputFile" }
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            {
+              staticClass: "custom-file-label",
+              attrs: { for: "exampleInputFile" }
+            },
+            [_vm._v("KMPlayer.exe")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group-append" }, [
+          _c("span", { staticClass: "input-group-text", attrs: { id: "" } }, [
+            _vm._v("Upload")
+          ])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true

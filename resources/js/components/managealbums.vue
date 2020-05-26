@@ -80,15 +80,15 @@
             <form @submit.prevent="editmode ? updatealbum() : Addalbum()">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input v-model="form.name" type="text" name="name"
-                            placeholder="Name"
-                            class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
-                        <has-error :form="form" field="name"></has-error>
+                        <label>Album Name</label>
+                        <input v-model="form.name" type="text" name="album_name"
+                            placeholder="Album_Name"
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('album_name') }">
+                        <has-error :form="form" field="album_name"></has-error>
                     </div>
 
                     <div class="form-group">
-                        <label>album_artist</label>
+                        <label>Album_Artist</label>
                         <input v-model="form.album_artist" type="text" name="album_artist"
                             placeholder="E-mail"
                             class="form-control" :class="{ 'is-invalid': form.errors.has('album_artist') }">
@@ -96,19 +96,56 @@
                     </div>
 
                     <div class="form-group">
-                        <label>producer</label>
+                        <label>Producer</label>
                         <input v-model="form.producer" type="producer" name="producer"
                             placeholder="producer"
                             class="form-control" :class="{ 'is-invalid': form.errors.has('producer') }">
                         <has-error :form="form" field="producer"></has-error>
                     </div>
+
                     <div class="form-group">
-                        <label>Phone Number</label>
-                        <input v-model="form.phoneNo" type="text" name="phoneNo"
-                            placeholder="Phone No."
-                            class="form-control" :class="{ 'is-invalid': form.errors.has('phoneNo') }">
-                        <has-error :form="form" field="phoneNo"></has-error>
+                        <label>Realese Date</label>
+                        <input v-model="form.realese_date" type="datetime" name="realese_date"
+                            placeholder="Realese Date."
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('realese_date') }">
+                        <has-error :form="form" field="realese_date"></has-error>
                     </div>
+
+                    <div class="form-group">
+                        <label>Album Price</label>
+                        <input v-model="form.album_price" type="text" name="album_price"
+                            placeholder="Album Price."
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('album_price') }">
+                        <has-error :form="form" field="album_price"></has-error>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Album Rating</label>
+                        <input v-model="form.album_rating" type="text" name="album_rating"
+                            placeholder="Album Rating."
+                            class="form-control" :class="{ 'is-invalid': form.errors.has('album_rating') }">
+                        <has-error :form="form" field="album_rating"></has-error>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Album Description</label>
+                        <textarea v-model="form.album_description" type="text" name="album_description"
+                        class="form-control" rows="3" placeholder="Album Description"
+                        :class="{ 'is-invalid': form.errors.has('album_description') }"></textarea>
+                        <has-error :form="form" field="album_description"></has-error>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="exampleInputFile">Album Art</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile"></label>
+                      </div>
+                    </div>
+                  </div>
+
+            
                 </div>
                 
                 <div class="modal-footer">
@@ -134,10 +171,15 @@
                     created_at:'',
                     updated_at:'',
                     id:'',
-                    name: '',
+                    album_name: '',
                     album_artist: '',
                     producer: '',
-                    phoneNo: '',
+                    realese_date: '',
+                    price: '',
+                    rating: '',
+                    album_des: '',
+                    album_art: '',
+                    album_path: '',
                 })
             }
         },
