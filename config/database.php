@@ -62,7 +62,7 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
             'dump' => [
-                'dump_binary_path' => 'C:\wamp64\bin\mariadb\mariadb10.4.10\bin', // only the path, so without `mysqldump` or `pg_dump`
+                'dump_binary_path' => 'C:\wamp64\bin\php\php7.4.0', // only the path, so without `mysqldump` or `pg_dump`
                 'use_single_transaction',
                 'timeout' => 60 * 5, // 5 minute timeout
                 'exclude_tables' => ['table1', 'table2'],
